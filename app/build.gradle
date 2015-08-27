@@ -1,20 +1,61 @@
 apply plugin: 'com.android.application'
 
+// Documentation: https://docs.gradle.org/current/userguide/userguide.html
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "ru.yandex.money.education.app"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionName getAppVersionName()
+        versionCode getAppVersionCode()
     }
-    buildTypes {
+
+    productFlavors {
+        dev {
+            minSdkVersion 23
+        }
+        prod {
+            minSdkVersion 15
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'LICENSE.txt'
+    }
+
+    signingConfigs {
+        debug {
+            // do something
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            storeFile file('../signing/release.keystore')
+            storePassword 'storePassword_1234'
+            keyAlias 'keyAlias_1234'
+            keyPassword 'keyPassword_1234'
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            buildConfigField 'String', 'GRADLE_DATE', '\"' + getDate() + '\"'
+            buildConfigField 'String', 'GRADLE_VERSION_NAME', '\"' + getAppVersionName() + '\"'
+        }
+        release {
+            buildConfigField 'String', 'GRADLE_DATE', '\"' + getDate() + '\"'
+            buildConfigField 'String', 'GRADLE_VERSION_NAME', '\"' + getAppVersionName() + '\"'
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-cfg.txt'
         }
     }
 }
@@ -23,4 +64,21 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.0'
+}
+
+def getAppVersionName() {
+    return '1.0'
+}
+
+int getAppVersionCode() {
+    return 1
+}
+
+def getDate() {
+    return new Date().format('dd.MM.yy')
+}
+
+task printVersion() {
+    println 'AppVersionName: ' + getAppVersionName()
+    println 'Date: ' + getDate()
 }
