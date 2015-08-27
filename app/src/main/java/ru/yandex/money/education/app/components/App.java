@@ -15,6 +15,17 @@ public class App extends Application {
         instance = this;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // Init global things: Analytics, BugTrackers etc.
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
+
     public static App getContext() {
         return instance;
     }
