@@ -1,9 +1,11 @@
-package ru.yandex.money.education.app;
+package ru.yandex.money.education.app.components.view.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import ru.yandex.money.education.app.R;
 
 public class ActivityMain extends AppCompatActivity {
 
