@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 // Documentation: https://docs.gradle.org/current/userguide/userguide.html
 
 android {
@@ -27,15 +26,7 @@ android {
         abortOnError false
     }
 
-    packagingOptions {
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'LICENSE.txt'
-    }
-
     signingConfigs {
-        debug {
-            // do something
-        }
         release {
             storeFile file('../signing/release.keystore')
             storePassword 'storePassword_1234'
