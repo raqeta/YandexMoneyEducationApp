@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_second">Second Activity</string>
+    <string name="title_activity_act_app_widget_setup">AppWidgetSetup Activity</string>
 </resources>

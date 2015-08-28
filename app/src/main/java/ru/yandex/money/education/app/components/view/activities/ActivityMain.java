@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ru.yandex.money.education.app.R;
+import ru.yandex.money.education.app.components.EduService;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -41,6 +42,14 @@ public class ActivityMain extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(broadcastReceiver);
+    }
+
+    public void startEduService() {
+        startService(new Intent(this, EduService.class));
+    }
+
+    public void stopEduService() {
+        stopService(new Intent(this, EduService.class));
     }
 
     @Override

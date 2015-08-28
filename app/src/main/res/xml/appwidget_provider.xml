@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:initialLayout="@layout/view_appwidget"
+    android:updatePeriodMillis="3600000"
+    android:previewImage="@mipmap/ic_launcher"
+    android:configure="ru.yandex.money.education.app.components.view.activities.ActAppWidgetSetup"
+    android:resizeMode="horizontal"
+    android:widgetCategory="keyguard|home_screen"
+    android:minResizeWidth="40dp"
+    android:minResizeHeight="40dp">
+</appwidget-provider>
+ 
