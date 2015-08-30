@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ru.yandex.money.education.app.R;
 import ru.yandex.money.education.app.data.models.EduObj;
@@ -35,5 +37,14 @@ public class ActivitySecond extends AppCompatActivity {
         TextView label = (TextView) findViewById(R.id.label);
         EditText input = (EditText) findViewById(R.id.input);
         Button button = (Button) findViewById(R.id.button);
+
+        input.setText(R.string.hello_world);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ActivitySecond.this, R.string.hello_world, Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
     }
 }

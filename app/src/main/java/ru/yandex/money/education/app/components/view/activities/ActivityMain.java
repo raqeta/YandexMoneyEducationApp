@@ -8,11 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import ru.yandex.money.education.app.R;
 import ru.yandex.money.education.app.components.EduService;
+import ru.yandex.money.education.app.components.view.fragments.FrgEdu;
+import ru.yandex.money.education.app.components.view.listeners.ListenerEdu;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityMain extends AppCompatActivity implements ListenerEdu {
 
     public static final String ACTION_BROADCAST = "ru.yandex.money.education.app.ACTION_BROADCAST";
     public static final String NAME = "ru.yandex.money.education.app.EXTRA_NAME";
@@ -30,6 +33,11 @@ public class ActivityMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.frg_edu_container, FrgEdu.create(), FrgEdu.TAG)
+                    .commit();
+        }
     }
 
     @Override
@@ -64,5 +72,10 @@ public class ActivityMain extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void doSomeThing() {
+        Toast.makeText(ActivityMain.this, R.string.edu_listener_says, Toast.LENGTH_SHORT).show();
     }
 }

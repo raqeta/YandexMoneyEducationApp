@@ -56,7 +56,7 @@
         </provider>
 
         <activity
-            android:name=".components.view.activities.ActAppWidgetSetup"
+            android:name=".components.view.activities.ActivityAppWidgetSetup"
             android:label="@string/title_activity_act_app_widget_setup"
             android:parentActivityName=".components.view.activities.ActivityMain" >
             <meta-data

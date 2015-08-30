@@ -6,7 +6,7 @@
     android:initialLayout="@layout/view_appwidget"
     android:updatePeriodMillis="3600000"
     android:previewImage="@mipmap/ic_launcher"
-    android:configure="ru.yandex.money.education.app.components.view.activities.ActAppWidgetSetup"
+    android:configure="ru.yandex.money.education.app.components.view.activities.ActivityAppWidgetSetup"
     android:resizeMode="horizontal"
     android:widgetCategory="keyguard|home_screen"
     android:minResizeWidth="40dp"

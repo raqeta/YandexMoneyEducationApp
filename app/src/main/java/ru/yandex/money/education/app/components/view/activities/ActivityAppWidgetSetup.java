@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import ru.yandex.money.education.app.R;
 
-public class ActAppWidgetSetup extends AppCompatActivity {
+public class ActivityAppWidgetSetup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
