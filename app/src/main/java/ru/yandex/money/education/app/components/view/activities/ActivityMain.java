@@ -13,6 +13,7 @@ import android.widget.Toast;
 import ru.yandex.money.education.app.R;
 import ru.yandex.money.education.app.components.EduService;
 import ru.yandex.money.education.app.components.view.fragments.FrgEdu;
+import ru.yandex.money.education.app.components.view.fragments.FrgPopup;
 import ru.yandex.money.education.app.components.view.listeners.ListenerEdu;
 
 public class ActivityMain extends AppCompatActivity implements ListenerEdu {
@@ -77,7 +78,8 @@ public class ActivityMain extends AppCompatActivity implements ListenerEdu {
                 // call settings
                 return true;
             case R.id.action_from_xml:
-                // do something 1
+                FrgPopup frg = new FrgPopup();
+                frg.show(getFragmentManager(), FrgPopup.TAG);
                 return true;
             case ITEM_ID:
                 // do something 2

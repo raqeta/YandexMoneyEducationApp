@@ -8,4 +8,5 @@
     <string name="edu_listener_says">Hello, I\'m Edu Listener</string>
     <string name="menu_new_item">New Item</string>
     <string name="menu_xml_item">XML Item</string>
+    <string name="frg_popup_title">Title!</string>
 </resources>
