@@ -20,6 +20,9 @@ public class ActivityMain extends AppCompatActivity implements ListenerEdu {
     public static final String ACTION_BROADCAST = "ru.yandex.money.education.app.ACTION_BROADCAST";
     public static final String NAME = "ru.yandex.money.education.app.EXTRA_NAME";
     public static final int DEFAULT_VALUE = 0;
+    public static final int GROUP_ID = 1001;
+    public static final int ITEM_ID = 2001;
+    public static final int ORDER_ONE = 1;
 
     private IntentFilter intentFilter = new IntentFilter(ACTION_BROADCAST);
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -63,13 +66,22 @@ public class ActivityMain extends AppCompatActivity implements ListenerEdu {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+        menu.add(GROUP_ID, ITEM_ID, ORDER_ONE, R.string.menu_new_item);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // call settings
+                return true;
+            case R.id.action_from_xml:
+                // do something 1
+                return true;
+            case ITEM_ID:
+                // do something 2
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

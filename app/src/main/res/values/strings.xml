@@ -6,4 +6,6 @@
     <string name="title_activity_second">Second Activity</string>
     <string name="title_activity_act_app_widget_setup">AppWidgetSetup Activity</string>
     <string name="edu_listener_says">Hello, I\'m Edu Listener</string>
+    <string name="menu_new_item">New Item</string>
+    <string name="menu_xml_item">XML Item</string>
 </resources>
